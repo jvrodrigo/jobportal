@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="search" namespace="/search" extends="struts-default">
+        <action name="searchProfile" method="searchProfileByText" class="com.uva.jobportal.actions.SearchAction">
+            <result name="success">searchprofile.jsp</result>
+            <result name="input">index.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="searchJob" method="searchJobByText" class="com.uva.jobportal.actions.SearchAction">
+            <result name="success">success.jsp</result>
+            <result name="input">index.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="avancedSearchJob" method="avancedSearchJob" class="com.uva.jobportal.actions.SearchAction">
+            <result name="success">index.jsp</result>
+            <result name="get">index.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        
+    </package>
+    <package name="candidates" namespace="/candidates" extends="struts-default">
+        <action name="addCandidate" method="add" class="com.uva.jobportal.web.CandidateAction">
+            <result name="post">success.jsp</result>
+            <result name="get">addcandidate.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">addcandidate.jsp</result>
+        </action>
+        <action name="listCandidate" method="list" class="com.uva.jobportal.web.CandidateAction">
+            <result name="success">listcandidate.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="viewCandidate" method="view" class="com.uva.jobportal.web.CandidateAction">
+            <result name="success">viewcandidate.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="deleteCandidate" method="delete" class="com.uva.jobportal.web.CandidateAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="editCandidate" method="edit" class="com.uva.jobportal.web.CandidateAction">
+            <!--<param name="edit">id</param>-->
+            <result name="get">editcandidate.jsp</result>
+            <result name="post">success.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">editcandidate.jsp</result>
+        </action>        
+    </package>
+    <package name="companies" namespace="/companies" extends="struts-default">
+        <action name="addCompany" method="add" class="com.uva.jobportal.web.CompanyAction">
+            <result name="post">success.jsp</result>
+            <result name="get">addcompany.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">addcompany.jsp</result>
+        </action>
+        <action name="listCompany" method="list" class="com.uva.jobportal.web.CompanyAction">
+            <result name="success">listcompany.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="viewCompany" method="view" class="com.uva.jobportal.web.CompanyAction">
+            <result name="success">viewcompany.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="deleteCompany" method="delete" class="com.uva.jobportal.web.CompanyAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="editCompany" method="edit" class="com.uva.jobportal.web.CompanyAction">
+            <!--<param name="edit">id</param>-->
+            <result name="input">editcompany.jsp</result>
+            <result name="get">editcompany.jsp</result>
+            <result name="post">viewcompany.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>  
+    <package name="jobs" namespace="/jobs" extends="struts-default">
+        <action name="addJob" method="add" class="com.uva.jobportal.web.JobAction">
+            <result name="get">addjob.jsp</result>
+            <result name="post">success.jsp</result>
+            <result name="input">addjob.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="listJob" method="list" class="com.uva.jobportal.web.JobAction">
+            <result name="success">listjob.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="viewJob" method="view" class="com.uva.jobportal.web.JobAction">
+            <result name="success">viewjob.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="deleteJob" method="delete" class="com.uva.jobportal.web.JobAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="editJob" method="edit" class="com.uva.jobportal.web.JobAction">
+            <!--<param name="edit">id</param>-->
+            <result name="get">editjob.jsp</result>
+            <result name="post">success.jsp</result>
+            <result name="input">editjob.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+    <package name="inscriptions" namespace="/inscriptions" extends="struts-default">
+        <action name="addInscription" method="add" class="com.uva.jobportal.web.InscriptionAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        
+        <action name="listCandidateInscription" method="listByCandidateId" class="com.uva.jobportal.web.InscriptionAction">
+            <result name="success">viewinscriptions.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="listJobInscription" method="listByJobId" class="com.uva.jobportal.web.InscriptionAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="updateInscription" method="updateInscription" class="com.uva.jobportal.web.InscriptionAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewJob</param>
+                <param name="namespace">/jobs</param>
+                <param name="parse">true</param>
+                <param name="id">${url}</param>
+            </result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+    <package name="profiles" namespace="/profiles" extends="struts-default">
+        <action name="viewProfile" method="view" class="com.uva.jobportal.web.ProfileAction">
+            <result name="success">viewprofile.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="listProfile" method="list" class="com.uva.jobportal.web.ProfileAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="editProfile" method="edit" class="com.uva.jobportal.web.ProfileAction">
+            <result name="get">editprofile.jsp</result>
+            <result name="post">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+    
+    <package name="default" extends="struts-default">
+        <action name="LogInActionCandidate" method="logInCandidate" class="com.uva.jobportal.actions.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="error">index.jsp</result>
+            <result name="input">index.jsp</result>
+        </action>
+        <action name="LogInActionCompany" method="logInCompany" class="com.uva.jobportal.actions.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="error">index.jsp</result>
+            <result name="input">index.jsp</result>
+        </action>        
+        <action name="LogOutAction" method="logOut" class="com.uva.jobportal.actions.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2014 8:11:33 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class catalog="jobportal" name="com.uva.jobportal.domain.Job" table="jobs">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="companyId" type="int">
+            <column name="company_id" not-null="true"/>
+        </property>
+        <property name="companyName" type="string">
+            <column length="25" name="company_name" not-null="true" unique="true"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" not-null="true"/>
+        </property>
+        <property name="location" type="string">
+            <column length="65535" name="location"/>
+        </property>
+        <property name="description" type="string">
+            <column length="65535" name="description"/>
+        </property>
+        <property name="category" type="string">
+            <column length="65535" name="category"/>
+        </property>
+        <property name="training" type="string">
+            <column length="65535" name="training"/>
+        </property>
+        <property name="experience" type="string">
+            <column length="65535" name="experience"/>
+        </property>
+        <property name="languages" type="string">
+            <column length="65535" name="languages"/>
+        </property>
+        <property name="created" type="timestamp">
+            <column length="19" name="created" not-null="true"/>
+        </property>
+        <property name="modified" type="timestamp">
+            <column length="19" name="modified" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
